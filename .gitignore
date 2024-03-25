@@ -1,0 +1,21 @@
+# Ignore Completion caches
+.zcompcache
+.zcompdump
+
+# Ignore history files
+.history/*
+
+# Ignore backups
+*.bak
+*.backup
+
+# Ignore old and unfinished files
+*.wip
+*.old
+
+# Ignore feature flags
+.featureflags/*
+
+# Never ignore .keep or README.md files
+!**/.keep
+!**/README.md
