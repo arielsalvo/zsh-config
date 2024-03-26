@@ -9,7 +9,7 @@ zi for \
     nocompile \
   eza-community/eza
 
-zi ice as"completion"
+zi ice as"completion" id-as"eza-community/eza-completions"
 zi snippet https://github.com/eza-community/eza/blob/main/completions/zsh/_eza
 
 # Git extras
