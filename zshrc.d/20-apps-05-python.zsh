@@ -1,4 +1,4 @@
-[[ ${ZINIT_DISABLE_PYTHON:-0} -eq 0 ]] && return;
+zi_featureflag_enabled "PYTHON" || return;
 
 zi pack"bgn" for pyenv
 
