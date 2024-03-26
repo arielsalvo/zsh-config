@@ -13,6 +13,7 @@ zi ice as"completion"
 zi snippet https://github.com/eza-community/eza/blob/main/completions/zsh/_eza
 
 # Git extras
+zi ice skip'jonas/tig'
 zi load @ext-git
 
 #  Fuzzy search programs (e.g. fzf, fzy, skim and peco)
