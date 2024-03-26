@@ -9,6 +9,7 @@ mkdir -p ${ZDOTDIR}/.featureflags
 setopt extended_glob
 for _featurefile in ${ZDOTDIR}/.featureflags/*(.N); do
   [[ ${_featurefile:t} != '~'* ]] || continue
+  [[ ${_featurefile:t} != 'README.md' ]] || continue
   typeset -gx ZI_FEATURES["${_featurefile:t}"]=1
 done
 unset _featurefile
