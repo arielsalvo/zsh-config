@@ -1,3 +1,6 @@
+# Disable System-Wide compinit Call (Ubuntu)
+skip_global_compinit=1
+
 # Setup zprof first if we need to profile
 alias zprofrc="ZPROFRC=1 zsh"
 if [[ ! ${ZPROFRC:-0} -eq 0 ]]; then
@@ -52,3 +55,4 @@ if (type zprof &>/dev/null); then
   # Show profile results if enabled
   zprof
 fi
+
