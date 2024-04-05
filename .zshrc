@@ -9,6 +9,13 @@ if [[ ! ${ZPROFRC:-0} -eq 0 ]]; then
   zmodload zsh/zprof
 fi
 
+# Setup debugging if required
+alias zdebug="ZDEBUG=1 zsh"
+if [[ ! ${ZDEBUG:-0} -eq 0 ]]; then
+  unset ZDEBUG
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+fi
+
 # Set ZI home directories
 typeset -Ag ZI
 typeset -gx ZI[HOME_DIR]="${XDG_CONFIG_HOME}/zi"
@@ -51,8 +58,7 @@ done
 unset _rcfile
 
 # Done profiling
-if (type zprof &>/dev/null); then
+if command -v zprof &> /dev/null; then
   # Show profile results if enabled
   zprof
 fi
-
