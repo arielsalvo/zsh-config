@@ -4,7 +4,7 @@ zi load @console-tools
 
 # Replace exa (unmaintained) with eza
 zi for \
-    from'gh-r' \
+  from'gh-r' \
   as'program' \
   sbin'**/eza -> eza' \
   eza-community/eza
