@@ -5,8 +5,8 @@ zi load @console-tools
 # Replace exa (unmaintained) with eza
 zi for \
     from'gh-r' \
-    sbin'* -> eza' \
-    nocompile \
+  as'program' \
+  sbin'**/eza -> eza' \
   eza-community/eza
 
 zi ice as"completion" id-as"eza-community/eza-completions"
