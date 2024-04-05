@@ -10,6 +10,6 @@ setopt extended_glob
 for _featurefile in ${ZDOTDIR}/.featureflags/*(.N); do
   [[ ${_featurefile:t} != '~'* ]] || continue
   [[ ${_featurefile:t} != 'README.md' ]] || continue
-  typeset -gx ZI_FEATURES["${_featurefile:t}"]=1
+  typeset -gx ZI_FEATURES["${_featurefile:t}"]=$(cat ${_featurefile})
 done
 unset _featurefile
