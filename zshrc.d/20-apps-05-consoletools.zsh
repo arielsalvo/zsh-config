@@ -9,7 +9,7 @@ zi for \
   sbin'**/eza -> eza' \
   eza-community/eza
 
-zi ice as"completion" id-as"eza-community/eza-completions"
+zi ice as'completion' has'eza' id-as'eza-community/eza-completions'
 zi snippet https://github.com/eza-community/eza/blob/main/completions/zsh/_eza
 
 # Git extras
