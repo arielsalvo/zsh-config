@@ -17,4 +17,7 @@ zi ice skip'jonas/tig'
 zi load @ext-git
 
 #  Fuzzy search programs (e.g. fzf, fzy, skim and peco)
+zi ice skip'fzf'
 zi load @fuzzy
+
+zi pack"bgn-binary+keys" for fzf
