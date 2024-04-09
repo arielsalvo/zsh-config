@@ -31,6 +31,9 @@ typeset -gx ZDOTDIR=${ZDOTDIR:-${XDG_CONFIG_HOME}/zsh}
 # Ensure directories exist
 mkdir -p ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME} ${XDG_RUNTIME_DIR} ${ZDOTDIR}
 
+# Make sure shell key bindings are Emacs
+bindkey -e
+
 # Set editors.
 typeset -gx PAGER="less"
 typeset -gx EDITOR="vim"
