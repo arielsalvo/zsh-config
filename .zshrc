@@ -57,6 +57,11 @@ for _rcfile in ${ZDOTDIR}/zshrc.d/*.zsh(.N); do
 done
 unset _rcfile
 
+# Disable searching for command names containing slashes in the path as it is incredibly slow
+# (See PATH_DIRS entry in https://zsh.sourceforge.io/Doc/Release/Options.html#Input_002fOutput)
+# (https://stackoverflow.com/questions/76746392/why-is-my-zsh-tab-completion-slow-on-commands-but-not-directories)
+unsetopt pathdirs
+
 # Done profiling
 if command -v zprof &> /dev/null; then
   # Show profile results if enabled
