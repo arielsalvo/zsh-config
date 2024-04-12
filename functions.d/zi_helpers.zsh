@@ -1,3 +1,4 @@
+# Test if a Feature flag is set and true
 function zi_featureflag_enabled() {
   [[ $# < 1 ]] && return 1
 
