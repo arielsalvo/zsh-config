@@ -4,9 +4,9 @@
 
 ### Setting
 
-Creating a file in this directory will result in an entry being created with the filename as key and a `1` as value in the `ZI_FEATURES` array.
+Creating a file in this directory will result in an entry being created with the filename as key and the contents as value in the `ZI_FEATURES` array.
 These files are ignored by version control and therefor, not carried over between deployments.
-> Feature Flags are case sensitive.
+> Feature Flags are case sensitive unless otherwise noted.
 
 # Turning off
 
@@ -18,14 +18,15 @@ The helper function called `zi_featureflag_enabled` can be called with a single 
 
 ## Purpose
 Feature Flags can be used to turn on new features during implementation and testing on different platforms.
-Sane defaults and controlled deployment of new features and a **MUST**.
-By default, any feature without a file or with a hidden file is turned off.
+Sane defaults and controlled deployment of new features are a **MUST**.
+For any feature without a file or with a hidden file, the default value is used.
 
 ## Example
 
 1. Create a file named `TEST-FEATURE-1` in the `.featureflags` directory
 1. Write your new feature in the appropriate file
-1. Make sure the code is excluded from execution if the feature flag is not enabled:
+1. The contents of the file can be used to branch the configuration
+1. The code can be excluded from execution if the feature flag is not enabled (see the following sections)
 
 ### Exclude a section
 
