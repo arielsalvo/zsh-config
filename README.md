@@ -10,6 +10,7 @@
 
 ## Feature Flags
 
-| Key/Filename | Default | Purpose |
-|--|--|--|
-| DEFAULT_PROMPT | P10K | Select the default prompt to install/use in `89-prompt.zsh` |
+| Key/Filename | Files | Purpose | Default | Values | Case Sensitivity |
+| -- | -- | -- | -- | -- | -- |
+| `DEFAULT_PROMPT` | <nobr>[89-prompt](zshrc.d/89-prompt.zsh)</nobr> | Select the default prompt to install/use | `P10K` | `<EMPTY>`<br/>`P10K`<br/>`STARSHIP`<br/>`DEFAULT` | NO |
+| `PYTHON` | <nobr>[20-apps-05-python](zshrc.d/20-apps-05-python.zsh)</nobr> | Enable installation of `pyenv` and, if available, initialize `conda` | OFF | `<EMPTY>` | N/A |
