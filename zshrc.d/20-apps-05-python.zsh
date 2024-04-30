@@ -20,7 +20,7 @@ unset __conda_setup
 }
 
 zi for \
-  wait'0b' \
+  wait'!0b' \
   id-as'python-conda-hooks' \
   atload'conda_hooks' \
   has'conda' \
