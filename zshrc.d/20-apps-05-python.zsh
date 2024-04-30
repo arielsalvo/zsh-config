@@ -1,4 +1,4 @@
-zi_featureflag_enabled "PYTHON" || return;
+zshconf_featureflag_enabled "PYTHON" || return;
 
 zi pack"bgn" for pyenv
 

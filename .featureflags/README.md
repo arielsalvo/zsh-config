@@ -4,7 +4,7 @@
 
 ### Setting
 
-Creating a file in this directory will result in an entry being created with the filename as key and the contents as value in the `ZI_FEATURES` array.
+Creating a file in this directory will result in an entry being created with the filename as key and the contents as value in the `ZSHCONF_FEATURES` array.
 These files are ignored by version control and therefor, not carried over between deployments.
 > Feature Flags are case sensitive unless otherwise noted.
 
@@ -14,7 +14,7 @@ To turn off a feature, simply delete the file or rename it to start with a dot.
 
 ### Querying
 
-The helper function called `zi_featureflag_enabled` can be called with a single parameter being the name of the flag. It returns `0` if the flag is enabled and `1` otherwise.
+The helper function called `zshconf_featureflag_enabled` can be called with a single parameter being the name of the flag. It returns `0` if the flag is enabled and `1` otherwise.
 
 ## Purpose
 Feature Flags can be used to turn on new features during implementation and testing on different platforms.
@@ -31,7 +31,7 @@ For any feature without a file or with a hidden file, the default value is used.
 ### Exclude a section
 
 ```shell
-if zi_featureflag_enabled "TEST-FEATURE-1"; then
+if zshconf_featureflag_enabled "TEST-FEATURE-1"; then
   # FEATURE CODE HERE...
 fi
 ```
@@ -39,5 +39,5 @@ fi
 ### Exclude the rest of a file
 
 ```shell
-zi_featureflag_enabled "TEST-FEATURE-1" || return
+zshconf_featureflag_enabled "TEST-FEATURE-1" || return
 ```

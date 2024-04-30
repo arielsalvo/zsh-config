@@ -1,4 +1,4 @@
-case ${(U)ZI_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
+case ${(U)ZSHCONF_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
 "P10K")
   # Load powerlevel10k theme
   # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
