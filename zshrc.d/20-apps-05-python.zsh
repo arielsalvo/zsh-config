@@ -2,7 +2,7 @@ zi_featureflag_enabled "PYTHON" || return;
 
 zi pack"bgn" for pyenv
 
-if command -v "conda" &> /dev/null; then
+conda_hooks() {
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -17,7 +17,15 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-fi
+}
+
+zi for \
+  wait'0b' \
+  id-as'python-conda-hooks' \
+  atload'conda_hooks' \
+  has'conda' \
+  light-mode \
+  z-shell/0
 
 # eval "$(register-python-argcomplete pipx)"
 
