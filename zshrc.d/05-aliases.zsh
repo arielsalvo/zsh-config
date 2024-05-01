@@ -1,4 +1,4 @@
-# Load functions
+# Load aliases
 mkdir -p ${ZDOTDIR}/aliases.d
 setopt extended_glob
 for _aliasfile in ${ZDOTDIR}/aliases.d/*.zsh(.N); do
