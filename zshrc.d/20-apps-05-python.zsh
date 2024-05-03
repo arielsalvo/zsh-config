@@ -24,7 +24,8 @@ zi for \
   id-as'python-conda-hooks' \
   atload'conda_hooks' \
   has'conda' \
-  light-mode \
+  lucid \
+  load \
   z-shell/0
 
 # eval "$(register-python-argcomplete pipx)"
