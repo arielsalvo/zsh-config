@@ -65,5 +65,5 @@ unsetopt pathdirs
 # Done profiling
 if command -v zprof &> /dev/null; then
   # Show profile results if enabled
-  zprof
+  zprof | less -SR
 fi
