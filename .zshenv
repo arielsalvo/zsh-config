@@ -37,7 +37,7 @@ bindkey -e
 # Set editors.
 typeset -gx PAGER="less"
 typeset -gx EDITOR="vim"
-if type code &>/dev/null; then
+if command -v code &> /dev/null; then
   typeset -gx VISUAL="code"
 else
   typeset -gx VISUAL=${EDITOR}
