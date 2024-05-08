@@ -13,4 +13,4 @@ zi for \
   has'packer' \
   lucid \
   load \
-  BreakingPitt/zsh-packer.git
+  BreakingPitt/zsh-packer
