@@ -11,14 +11,14 @@ _zini_asdf_install() {
     # echo 'direnv() { asdf exec direnv "$@"; }' >> asdf_hooks.zsh
 }
 
-zi wait:'0b' \
-    lucid \
-    light-mode \
+zi for \
+    wait:'0a' \
     sbin:'bin/asdf' \
     atinit:'export ASDF_DIR="$PWD"' \
     atclone:'_zini_asdf_install' \
     atpull'%atclone' \
     src:'asdf.sh' \
     multisrc:'asdf_hooks.zsh' \
-    for \
+    lucid \
+    light-mode \
     depth:1 @asdf-vm/asdf
