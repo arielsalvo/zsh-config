@@ -4,3 +4,6 @@ function zi_config() {
     echo "$key -> ${ZI[$key]}";
   done
 }
+
+# Pull changes from repo
+alias zi_pull="git -C ${ZDOTDIR} pull"
