@@ -6,6 +6,9 @@
 # But, you can symlink it to this file
 # ln -s ~/.config/zsh/.zshenv ~/.zshenv
 
+# If the configuration is cloned somewhere else and $ZDOTDIR is not set,
+# it is implied from the real path of this file.
+
 # Set language and locale
 # (https://www.gnu.org/software/gettext/manual/html_node/The-LANGUAGE-variable.html)
 export LANGUAGE="en"
@@ -26,7 +29,7 @@ typeset -gx XDG_DATA_HOME=~/.local/share
 typeset -gx XDG_RUNTIME_DIR=~/.xdg
 
 # Root for all Zsh configuration files
-typeset -gx ZDOTDIR=${ZDOTDIR:-${XDG_CONFIG_HOME}/zsh}
+typeset -gx ZDOTDIR=${ZDOTDIR:-$(dirname $(realpath $0))}
 
 # Ensure directories exist
 mkdir -p ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME} ${XDG_RUNTIME_DIR} ${ZDOTDIR}
