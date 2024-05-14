@@ -29,7 +29,7 @@ typeset -gx XDG_DATA_HOME=~/.local/share
 typeset -gx XDG_RUNTIME_DIR=~/.xdg
 
 # Root for all Zsh configuration files
-typeset -gx ZDOTDIR=${ZDOTDIR:-$(dirname $(realpath $0))}
+typeset -gx ZDOTDIR=${ZDOTDIR:-$(dirname $(realpath ~/.zshenv))}
 
 # Ensure directories exist
 mkdir -p ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME} ${XDG_RUNTIME_DIR} ${ZDOTDIR}
