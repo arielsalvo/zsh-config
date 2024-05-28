@@ -2,11 +2,11 @@ case ${(U)ZSHCONF_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
 "P10K")
   # Load powerlevel10k theme
   # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
-  [[ -f ~/.p10k.zsh ]] || ln -s ${ZDOTDIR}/files.d/.p10k.zsh ${HOME}/.p10k.zsh
+  [[ -f ${HOME}/.p10k.zsh ]] || ln -s ${ZDOTDIR}/files.d/.p10k.zsh ${HOME}/.p10k.zsh
   zi for \
     depth"1" \
     atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' \
-    atload"!source ~/.p10k.zsh" \
+    atload"!source ${HOME}/.p10k.zsh" \
     nocd \
     light-mode romkatv/powerlevel10k
 ;;
