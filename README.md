@@ -78,15 +78,15 @@ Keep in mind this will not install a Python interpreter (See [the Python section
 | Key/Filename | Type | Files | Purpose | Default | Values | Case Sensitivity |
 | -- | -- | -- | -- | -- | -- | -- |
 | `DEFAULT_PROMPT` | VAR | <nobr>[89-prompt](zshrc.d/89-prompt.zsh)</nobr> | Select the default prompt to install/use | `P10K` | `<EMPTY>`<br/>`P10K`<br/>`STARSHIP`<br/>`DEFAULT` | NO |
-| `PYTHON` | FLAG | <nobr>[20-apps-05-python](zshrc.d/20-apps-05-python.zsh)</nobr> | Enable installation of `pyenv` and, if available, initialize `conda` | OFF | `<EMPTY>` | N/A |
+| `PYTHON` | FLAG/VAR | <nobr>[20-apps-05-python](zshrc.d/20-apps-05-python.zsh)</nobr> | Enable installation of `python` via `asdf` and, if available, initialize `conda` | OFF | `<EMPTY>`<br/><nobr>`<distro-name>`<nobr/> | N/A |
 
 ## Python
 
-Once `pyenv` has been enabled (See [Feature Flags](#Feature-Flags) for instructions), you can install a Python interpreter (recommended: `miniforge3-latest`).
+Once `python` has been enabled in `asdf` (See [Feature Flags](#Feature-Flags) for instructions), you can install a Python interpreter by setting the distro name in the `PYTHON` feature flag (recommended: `miniforge3-latest`).
 ```sh
-pyenv install miniforge3-latest
-pyenv global miniforge3-latest
+echo -n "miniforge3-latest" > ${ZDOTDIR}/.featureflags/DEFAULT_PROMPT
 ```
 
 Open a new terminal.
+The specified distro will be registered as the global Python interpreter (with `system` as fallback).
 If the Python interpreter is `conda` based, the hooks will be installed, enabling environment activations.
