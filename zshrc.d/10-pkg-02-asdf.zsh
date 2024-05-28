@@ -1,7 +1,8 @@
-_zini_asdf_install() {
+_zi_asdf_install() {
     # path export temporary required so the asdf script finds itself
     PATH="${PWD}/bin:$PATH"
     echo "" > asdf_hooks.zsh
+    [[ -f ${HOME}/.asdfrc ]] || ln -s ${ZDOTDIR}/files.d/.asdfrc ${HOME}/.asdfrc
 
     # Example install of direnv:
     # asdf plugin add direnv
@@ -15,7 +16,7 @@ zi for \
     wait:'0a' \
     sbin:'bin/asdf' \
     atinit:'export ASDF_DIR="$PWD"' \
-    atclone:'_zini_asdf_install' \
+    atload:'_zi_asdf_install' \
     atpull'%atclone' \
     src:'asdf.sh' \
     multisrc:'asdf_hooks.zsh' \
