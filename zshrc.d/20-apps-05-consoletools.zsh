@@ -20,6 +20,14 @@ else
     eza-community/eza
 fi
 
+# eza aliases
+zi for \
+  has'eza' \
+  wait \
+  atinit'AUTOCD=0' \
+  lucid \
+  load z-shell/zsh-eza
+
 # Git extras
 zi ice skip'jonas/tig'
 zi load @ext-git
