@@ -2,8 +2,16 @@
 zi ice skip'ogham/exa'
 zi load @console-tools
 
-if [[ ! "$OSTYPE" == darwin* ]]; then
-  # Replace exa (unmaintained) with eza
+# Replace exa (unmaintained) with eza
+if [[ "$OSTYPE" == darwin* ]]; then
+  # No precompiled release for MacOS
+  zi for \
+    id-as'eza-cargo' \
+    rustup \
+    cargo'!eza -> eza' \
+    lucid \
+    load z-shell/0
+else
   zi for \
     from'gh-r' \
     dl'https://github.com/eza-community/eza/raw/main/completions/zsh/_eza' \
