@@ -6,13 +6,11 @@ if [[ ! "$OSTYPE" == darwin* ]]; then
   # Replace exa (unmaintained) with eza
   zi for \
     from'gh-r' \
+    dl'https://github.com/eza-community/eza/raw/main/completions/zsh/_eza' \
     as'program' \
     sbin'**/eza -> eza' \
     eza-community/eza
 fi
-
-zi ice as'completion' has'eza' id-as'eza-community/eza-completions'
-zi snippet https://github.com/eza-community/eza/blob/main/completions/zsh/_eza
 
 # Git extras
 zi ice skip'jonas/tig'
