@@ -26,26 +26,20 @@ __asdf_python_install() {
 }
 
 __asdf_conda_hooks() {
-if ! command -v conda &> /dev/null; then
-    # conda is not installed
-    return
-fi
-__python_home="$(asdf where python)"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
+    if ! command -v conda &> /dev/null; then
+        # conda is not installed
+        return
+    fi
+    __python_home="$(asdf where python)"
+    # >>> conda initialize >>>
     if [ -f "$__python_home/etc/profile.d/conda.sh" ]; then
         . "$__python_home/etc/profile.d/conda.sh"
     else
         export PATH="$__python_home/bin:$PATH"
     fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-unset __python_home
+    unset __python_home
+    # Activate "base" environment (opinionated)
+    conda activate base
 }
 
 zinit for \
