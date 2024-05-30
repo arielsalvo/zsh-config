@@ -1,5 +1,6 @@
 # Console tools (e.g. fd, bat, ripgrep, etc)
 zinit for \
+  skip'dircolors-material' \
   skip'ogham/exa' \
   skip'jonas/tig' \
   load @console-tools
