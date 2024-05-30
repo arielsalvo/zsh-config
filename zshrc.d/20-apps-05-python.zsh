@@ -26,9 +26,9 @@ __asdf_python_install() {
 }
 
 __asdf_conda_hooks() {
-__asdf_python_install
 if ! command -v conda &> /dev/null; then
-  return
+    # conda is not installed
+    return
 fi
 __python_home="$(asdf where python)"
 # >>> conda initialize >>>
@@ -50,6 +50,7 @@ unset __python_home
 
 zinit for \
     id-as'asdf-conda-hooks' \
+    atclone'!__asdf_python_install' \
     atload'!__asdf_conda_hooks' \
     lucid \
     load z-shell/0 \
