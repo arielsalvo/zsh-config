@@ -1,5 +1,5 @@
 # Install direnv from release and hook it into the shell
-zi for \
+zinit for \
   from"gh-r" \
   as"program" \
   mv"direnv* -> direnv" \

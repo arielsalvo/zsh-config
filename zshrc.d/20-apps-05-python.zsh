@@ -1,6 +1,6 @@
 zshconf_featureflag_enabled "PYTHON" || return;
 
-asdf_python_install() {
+__asdf_python_install() {
     if ! command -v asdf &> /dev/null; then
         # ASDF is not installed
         return
@@ -25,8 +25,8 @@ asdf_python_install() {
     fi
 }
 
-asdf_conda_hooks() {
-asdf_python_install
+__asdf_conda_hooks() {
+__asdf_python_install
 if ! command -v conda &> /dev/null; then
   return
 fi
@@ -48,17 +48,11 @@ unset __conda_setup
 unset __python_home
 }
 
-zi for \
-    wait'!0a' \
+zinit for \
     id-as'asdf-conda-hooks' \
-    atload'!asdf_conda_hooks' \
+    atload'!__asdf_conda_hooks' \
     lucid \
-    load \
-    z-shell/0
-
-zi for \
-    wait'0b' \
-    atclone'zi cclear; zi creinstall -q .;' \
+    load z-shell/0 \
+    atclone'zinit cclear; zinit creinstall -q .;' \
     lucid \
-    load \
-    conda-incubator/conda-zsh-completion
+    load conda-incubator/conda-zsh-completion

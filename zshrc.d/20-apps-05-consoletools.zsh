@@ -1,18 +1,20 @@
 # Console tools (e.g. fd, bat, ripgrep, etc)
-zi ice skip'ogham/exa'
-zi load @console-tools
+zinit for \
+  skip'ogham/exa' \
+  skip'jonas/tig' \
+  load @console-tools
 
 # Replace exa (unmaintained) with eza
 if [[ "$OSTYPE" == darwin* ]]; then
   # No precompiled release for MacOS
-  zi for \
+  zinit for \
     id-as'eza-cargo' \
     rustup \
     cargo'!eza -> eza' \
     lucid \
     load z-shell/0
 else
-  zi for \
+  zinit for \
     from'gh-r' \
     dl'https://github.com/eza-community/eza/raw/main/completions/zsh/_eza' \
     as'program' \
@@ -21,7 +23,7 @@ else
 fi
 
 # eza aliases
-zi for \
+zinit for \
   has'eza' \
   wait \
   atinit'AUTOCD=0' \
@@ -29,11 +31,15 @@ zi for \
   load z-shell/zsh-eza
 
 # Git extras
-zi ice skip'jonas/tig'
-zi load @ext-git
+zinit for \
+  load @ext-git
 
 #  Fuzzy search programs (e.g. fzf, fzy, skim and peco)
-zi ice skip'fzf'
-zi load @fuzzy
+zinit for \
+  skip'fzf' \
+  skip'lotabout/skim' \
+  load @fuzzy
 
-zi pack"bgn-binary+keys" for fzf
+zinit for \
+  pack"bgn-binary+keys" \
+  load fzf

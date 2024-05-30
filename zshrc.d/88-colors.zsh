@@ -1,2 +1,2 @@
 # Add support for LS_COLORS (meta-plugin)
-zi load @console-style
+# zinit load @console-style
