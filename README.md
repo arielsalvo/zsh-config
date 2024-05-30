@@ -2,7 +2,7 @@
 
 ## Intro and Basics
 
-* Based on ZShell:ZI
+* Based on Zdharma-continuum:ZINIT
 * This repository should be cloned to `$HOME/.config/zsh` (a.k.a. `$ZDOTDIR`)
 * To enable the configuration, symlink `$ZDOTDIR/.zshenv` to `$HOME/.zshenv`
 * $ZDOTDIR is implied from the real location of `.zshenv` (changing it is untested)

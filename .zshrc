@@ -16,14 +16,14 @@ if [[ ! ${ZDEBUG:-0} -eq 0 ]]; then
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 fi
 
-# Set ZI home directories
-typeset -Ag ZI
-typeset -gx ZI[HOME_DIR]="${XDG_CONFIG_HOME}/zi"
-typeset -gx ZI[BIN_DIR]="${ZI[HOME_DIR]}/bin"
+# Set ZINIT home directories
+typeset -Ag ZINIT
+typeset -gx ZINIT[HOME_DIR]="${XDG_CONFIG_HOME}/zinit"
+typeset -gx ZINIT[BIN_DIR]="${ZINIT[HOME_DIR]}/bin"
 
 # Disable POWERLEVEL9K Instance Prompt during first run
-if [[ ! -d "${ZI[BIN_DIR]}" ]]; then
-  echo "Initializing ZI.... please wait....\n\n"
+if [[ ! -d "${ZINIT[BIN_DIR]}" ]]; then
+  echo "Initializing ZINIT.... please wait....\n\n"
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 fi
 

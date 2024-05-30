@@ -1,7 +1,7 @@
 ## FIXME: Detect if terraform and packer are installed to load completions
 
 # Load completion for terraform
-zi for \
+zinit for \
   wait'0c' \
   lucid \
   load \
@@ -9,7 +9,7 @@ zi for \
 
 
 # Load completion for packer
-zi for \
+zinit for \
   wait'0c' \
   lucid \
   load \
