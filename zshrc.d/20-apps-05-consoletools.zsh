@@ -13,7 +13,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     rustup \
     cargo'!eza -> eza' \
     lucid \
-    load z-shell/0
+    load @zdharma-continuum/null
 else
   zinit for \
     from'gh-r' \
@@ -24,6 +24,7 @@ else
 fi
 
 # eza aliases
+# TODO: Replace z-shell with another repo
 zinit for \
   has'eza' \
   wait \

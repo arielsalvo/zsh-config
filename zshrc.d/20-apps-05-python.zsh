@@ -49,11 +49,12 @@ unset __python_home
 }
 
 zinit for \
-    id-as'asdf-conda-hooks' \
-    atclone'!__asdf_python_install' \
+    id-as'asdf-conda' \
+    atclone'__asdf_python_install' \
     atload'!__asdf_conda_hooks' \
+    nocompile \
     lucid \
-    load z-shell/0 \
+    load @zdharma-continuum/null \
     atclone'zinit cclear; zinit creinstall -q .;' \
     lucid \
     load conda-incubator/conda-zsh-completion
