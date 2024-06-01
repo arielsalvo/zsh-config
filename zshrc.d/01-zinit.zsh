@@ -3,8 +3,13 @@
 if [[ ! -d "${ZINIT[BIN_DIR]}/.git" ]]; then
   typeset -g ZINIT_FRESH=1
   command mkdir -p "$ZINIT[BIN_DIR]"
-  compaudit | xargs chown -R "$(whoami)" "$ZINIT[HOME_DIR]"
-  compaudit | xargs chmod -R go-w "$ZINIT[HOME_DIR]"
+  if ! command -v compaudit &> /dev/null; then
+    compaudit | xargs chown -R "$(whoami)" "$ZINIT[HOME_DIR]"
+    compaudit | xargs chmod -R go-w "$ZINIT[HOME_DIR]"
+  else
+    chown -R "$(whoami)" "$ZINIT[HOME_DIR]"
+    chmod -R go-w "$ZINIT[HOME_DIR]"
+  fi
   command git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT[BIN_DIR]"
 fi
 source "${ZINIT[BIN_DIR]}/zinit.zsh"
