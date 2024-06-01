@@ -4,5 +4,4 @@ zinit for \
   wait'!0b' \
   has'aws-vault' \
   lucid \
-  load \
-  blimmer/zsh-aws-vault
+    blimmer/zsh-aws-vault

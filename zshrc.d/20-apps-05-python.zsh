@@ -48,7 +48,7 @@ zinit for \
     atload'!__asdf_conda_hooks' \
     nocompile \
     lucid \
-    load @zdharma-continuum/null \
+      @zdharma-continuum/null \
     atclone'zinit cclear; zinit creinstall -q .;' \
     lucid \
-    load conda-incubator/conda-zsh-completion
+      conda-incubator/conda-zsh-completion
