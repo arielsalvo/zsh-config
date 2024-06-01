@@ -6,4 +6,6 @@ function zinit_config() {
 }
 
 # Pull changes from repo
-alias zinit_pull="git -C ${ZDOTDIR} pull"
+alias zinit_pull="git -C ${ZDOTDIR} pull --ff-only"
+alias zini_pull=zinit_pull
+alias zi_pull=zinit_pull
