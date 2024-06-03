@@ -9,12 +9,14 @@ zinit for \
 if [[ "$OSTYPE" == darwin* ]]; then
   # No release for Darwin/MacOS in repo
   # Use homebrew instead
-  zinit for \
+zinit for \
     id-as'eza-community/eza' \
-    atclone"brew install eza" \
-    atpull"brew upgrade eza" \
-    atdelete"brew uninstall eza" \
+    atclone'if ! command -v eza &> /dev/null; then brew install eza; fi' \
+    atpull'brew upgrade eza' \
+    atload'if ! command -v eza &> /dev/null; then brew install eza; fi' \
+    atdelete'brew uninstall eza' \
     nocompile \
+    lucid \
       eza-community/eza
 else
   zinit for \
