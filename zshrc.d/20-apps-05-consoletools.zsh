@@ -7,13 +7,15 @@ zinit for \
 
 # Replace exa (unmaintained) with eza
 if [[ "$OSTYPE" == darwin* ]]; then
-  # No precompiled release for MacOS
+  # No release for Darwin/MacOS in repo
+  # Use homebrew instead
   zinit for \
-    id-as'eza-cargo' \
-    rustup \
-    cargo'!eza -> eza' \
-    lucid \
-      @zdharma-continuum/null
+    id-as'eza' \
+    atclone"brew install eza" \
+    atpull"brew upgrade eza" \
+    atdelete"brew uninstall eza" \
+    nocompile \
+      eza-community/eza
 else
   zinit for \
     from'gh-r' \
