@@ -1,3 +1,7 @@
+# Enable comments in interactive commands
+setopt interactive_comments
+
+# Set up selected prompt
 case ${(U)ZSHCONF_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
 "P10K")
   # Load powerlevel10k theme
