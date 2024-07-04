@@ -5,7 +5,6 @@ mkdir -p ${ZDOTDIR}/.featureflags
 typeset -Ag ZSHCONF_FEATURES
 
 # Load functions
-mkdir -p ${ZDOTDIR}/.featureflags
 setopt extended_glob
 for _featurefile in ${ZDOTDIR}/.featureflags/*(.N); do
   [[ ${_featurefile:t} != '~'* ]] || continue
