@@ -84,7 +84,7 @@ Keep in mind this will not install a Python interpreter (See [the Python section
 
 Once `python` has been enabled in `asdf` (See [Feature Flags](#Feature-Flags) for instructions), you can install a Python interpreter by setting the distro name in the `PYTHON` feature flag (recommended: `miniforge3-latest`).
 ```sh
-echo -n "miniforge3-latest" > ${ZDOTDIR}/.featureflags/DEFAULT_PROMPT
+echo -n "miniforge3-latest" > ${ZDOTDIR}/.featureflags/PYTHON
 ```
 
 Open a new terminal.
