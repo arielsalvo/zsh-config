@@ -38,6 +38,7 @@ zinit for \
 
 # Git extras
 zinit for \
+  skip'tj/git-extras' \
     @ext-git
 
 #  Fuzzy search programs (e.g. fzf, fzy, skim and peco)
