@@ -1,6 +1,19 @@
 # Enable comments in interactive commands
 setopt interactive_comments
 
+function zsh_directory_name() {
+  emulate -L zsh
+  [[ $1 == d ]] || return
+  while [[ $2 != / ]]; do
+    if [[ -e $2/.git ]]; then
+      typeset -ga reply=(${2:t} $#2)
+      return
+    fi
+    2=${2:h}
+  done
+  return 1
+}
+
 # Set up selected prompt
 case ${(U)ZSHCONF_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
 "P10K")
