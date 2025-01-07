@@ -50,3 +50,10 @@ zinit \
 zinit \
   pack"bgn-binary+keys" \
   for fzf
+
+zinit \
+  has'fzf' \
+  wait \
+  lucid \
+  for Aloxaf/fzf-tab
+
