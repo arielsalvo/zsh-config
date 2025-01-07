@@ -1,15 +1,15 @@
 # Console tools (e.g. fd, bat, ripgrep, etc)
-zinit for \
+zinit \
   skip'dircolors-material' \
   skip'ogham/exa' \
   skip'jonas/tig' \
-    @console-tools
+  for @console-tools
 
 # Replace exa (unmaintained) with eza
 if [[ "$OSTYPE" == darwin* ]]; then
   # No release for Darwin/MacOS in repo
   # Use homebrew instead
-  zinit for \
+  zinit \
     id-as'eza-community/eza' \
     atclone'if ! command -v eza &> /dev/null; then brew install eza; fi' \
     atpull'brew upgrade eza' \
@@ -17,36 +17,36 @@ if [[ "$OSTYPE" == darwin* ]]; then
     atdelete'brew uninstall eza' \
     nocompile \
     lucid \
-      eza-community/eza
+    for eza-community/eza
 else
-  zinit for \
+  zinit \
     from'gh-r' \
     dl'https://github.com/eza-community/eza/raw/main/completions/zsh/_eza' \
     as'program' \
     sbin'**/eza -> eza' \
-      eza-community/eza
+    for eza-community/eza
 fi
 
 # eza aliases
 # TODO: Replace z-shell with another repo
-zinit for \
+zinit \
   has'eza' \
   wait \
   atinit'AUTOCD=0' \
   lucid \
-    z-shell/zsh-eza
+  for z-shell/zsh-eza
 
 # Git extras
-zinit for \
+zinit \
   skip'tj/git-extras' \
-    @ext-git
+  for @ext-git
 
 #  Fuzzy search programs (e.g. fzf, fzy, skim and peco)
-zinit for \
+zinit \
   skip'fzf' \
   skip'lotabout/skim' \
-    @fuzzy
+  for @fuzzy
 
-zinit for \
+zinit \
   pack"bgn-binary+keys" \
-    fzf
+  for fzf
