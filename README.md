@@ -26,7 +26,7 @@ This [article](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git) 
 
 Run the following commands in the shell being installed:
 ```sh
-git config --global credential.helper '/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe'
+git config --global credential.helper '/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe'
 ```
 
 If this deployment is used to push code to the repository, these are required as well:
