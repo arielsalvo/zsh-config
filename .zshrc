@@ -5,7 +5,7 @@ skip_global_compinit=1
 typeset -Ag ZINIT
 typeset -gx ZINIT[HOME_DIR]="${XDG_CONFIG_HOME}/zinit"
 typeset -gx ZINIT[BIN_DIR]="${ZINIT[HOME_DIR]}/bin"
-typeset -gx ZINIT[ZCOMPDUMP_PATH]="${ZCOMPCACHE}/zcompdump"
+typeset -gx ZINIT[ZCOMPDUMP_PATH]="${XDG_CACHE_HOME}/zcompdump"
 
 # Disable POWERLEVEL9K Instance Prompt during first run
 if [[ ! -d "${ZINIT[BIN_DIR]}" ]]; then
