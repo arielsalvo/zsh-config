@@ -1,5 +1,5 @@
 # Install direnv from release and hook it into the shell
-zinit for \
+zinit \
   wait \
   from"gh-r" \
   as"program" \
@@ -9,4 +9,4 @@ zinit for \
   pick"direnv" \
   src="zhook.zsh" \
   lucid \
-    direnv/direnv
+    for direnv/direnv

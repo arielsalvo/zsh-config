@@ -26,7 +26,7 @@ case ${(U)ZSHCONF_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
     atload'!source ${HOME}/.p10k.zsh' \
     nocd \
     light-mode \
-    for romkatv/powerlevel10k
+      for romkatv/powerlevel10k
 ;;
 "STARSHIP")
   # Load starship theme
@@ -40,7 +40,7 @@ case ${(U)ZSHCONF_FEATURES[DEFAULT_PROMPT]:-"P10K"} in
     atpull'%atclone' \
     src'init.zsh' \
     light-mode \
-    for starship/starship
+      for starship/starship
 ;;
 "DEFAULT"|*)
   # Use Zsh native prompt

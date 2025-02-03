@@ -7,7 +7,7 @@ zinit \
   atpull'%atclone' \
   pick"direnv" \
   lucid \
-  for @asdf-vm/asdf
+    for @asdf-vm/asdf
 
 # Add ASDF shim to path
 path=(

@@ -1,6 +1,6 @@
 # Install jq
-zinit for \
+zinit \
     from'gh-r' \
     sbin'* -> jq' \
     nocompile \
-      @jqlang/jq
+      for @jqlang/jq

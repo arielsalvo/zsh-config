@@ -3,7 +3,7 @@ zinit \
   skip'dircolors-material' \
   skip'ogham/exa' \
   skip'jonas/tig' \
-  for @console-tools
+    for @console-tools
 
 # Replace exa (unmaintained) with eza
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -17,14 +17,14 @@ if [[ "$OSTYPE" == darwin* ]]; then
     atdelete'brew uninstall eza' \
     nocompile \
     lucid \
-    for eza-community/eza
+      for eza-community/eza
 else
   zinit \
     from'gh-r' \
     dl'https://github.com/eza-community/eza/raw/main/completions/zsh/_eza' \
     as'program' \
     sbin'**/eza -> eza' \
-    for eza-community/eza
+      for eza-community/eza
 fi
 
 # eza aliases
@@ -34,28 +34,28 @@ zinit \
   wait \
   atinit'AUTOCD=0' \
   lucid \
-  for z-shell/zsh-eza
+    for z-shell/zsh-eza
 
 # Git extras
 zinit \
   skip'tj/git-extras' \
-  for @ext-git
+    for @ext-git
 
 #  Fuzzy search programs (e.g. fzf, fzy, skim and peco)
 zinit \
   skip'fzf' \
   skip'lotabout/skim' \
-  for @fuzzy
+    for @fuzzy
 
 zinit \
   pack"bgn-binary+keys" \
-  for fzf
+    for fzf
 
 zinit \
   has'fzf' \
   wait \
   lucid \
-  for Aloxaf/fzf-tab
+    for Aloxaf/fzf-tab
 
 autoload -z edit-command-line
 zle -N edit-command-line

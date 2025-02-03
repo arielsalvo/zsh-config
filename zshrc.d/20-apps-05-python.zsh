@@ -42,13 +42,13 @@ __asdf_conda_hooks() {
     conda activate base
 }
 
-zinit for \
+zinit \
     id-as'asdf-conda' \
     atclone'__asdf_python_install' \
     atload'!__asdf_conda_hooks' \
     nocompile \
     lucid \
-      @zdharma-continuum/null \
+      for @zdharma-continuum/null \
     atclone'zinit cclear; zinit creinstall -q .;' \
     lucid \
-      conda-incubator/conda-zsh-completion
+      for conda-incubator/conda-zsh-completion
