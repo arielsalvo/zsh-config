@@ -31,11 +31,8 @@ typeset -gx XDG_RUNTIME_DIR=~/.xdg
 # Move completion cache
 typeset -gx ZCOMPCACHE="$XDG_CACHE_HOME/zcompcache"
 
-# Root for all Zsh configuration files
-typeset -gx ZDOTDIR=${ZDOTDIR:-$(dirname $(realpath ~/.zshenv))}
-
 # Ensure directories exist
-mkdir -p ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME} ${XDG_RUNTIME_DIR} ${ZCOMPCACHE} ${ZDOTDIR}
+mkdir -p ${XDG_CACHE_HOME} ${XDG_CONFIG_HOME} ${XDG_DATA_HOME} ${XDG_RUNTIME_DIR} ${ZCOMPCACHE}
 
 # Make sure shell key bindings are Emacs
 bindkey -e
@@ -56,4 +53,14 @@ typeset -gx TZ="America/Argentina/Buenos_Aires"
 if [[ "$OSTYPE" == darwin* ]]; then
   # Disable Apple Terminal.app session save/restore functionality
   typeset -gx SHELL_SESSIONS_DISABLE=1
+fi
+
+# Disable the rest of the configuration
+alias zdisabled="ZDISABLED=1 zsh"
+if [[ ! ${ZDISABLED:-0} -eq 0 ]]; then
+  unset ZDOTDIR ZDISABLED
+else
+  # Root for all Zsh configuration files
+  typeset -gx ZDOTDIR=${ZDOTDIR:-$(dirname $(realpath ~/.zshenv))}
+  mkdir -p ${ZDOTDIR}
 fi
