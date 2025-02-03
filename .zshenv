@@ -64,3 +64,18 @@ else
   typeset -gx ZDOTDIR=${ZDOTDIR:-$(dirname $(realpath ~/.zshenv))}
   mkdir -p ${ZDOTDIR}
 fi
+
+# Setup zprof first if we need to profile
+alias zprofrc="ZPROFRC=1 zsh"
+if [[ ! ${ZPROFRC:-0} -eq 0 ]]; then
+  unset ZPROFRC
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+  zmodload zsh/zprof
+fi
+
+# Setup debugging if required
+alias zdebug="ZDEBUG=1 zsh"
+if [[ ! ${ZDEBUG:-0} -eq 0 ]]; then
+  unset ZDEBUG
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+fi

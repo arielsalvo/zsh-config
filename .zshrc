@@ -1,21 +1,6 @@
 # Disable System-Wide compinit Call (Ubuntu)
 skip_global_compinit=1
 
-# Setup zprof first if we need to profile
-alias zprofrc="ZPROFRC=1 zsh"
-if [[ ! ${ZPROFRC:-0} -eq 0 ]]; then
-  unset ZPROFRC
-  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-  zmodload zsh/zprof
-fi
-
-# Setup debugging if required
-alias zdebug="ZDEBUG=1 zsh"
-if [[ ! ${ZDEBUG:-0} -eq 0 ]]; then
-  unset ZDEBUG
-  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-fi
-
 # Set ZINIT home directories
 typeset -Ag ZINIT
 typeset -gx ZINIT[HOME_DIR]="${XDG_CONFIG_HOME}/zinit"
