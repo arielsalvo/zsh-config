@@ -36,6 +36,7 @@ Recommendations and PRs are appreciated but, if it doesn't improve the setup for
 
 This configuration requires the following packages installed via package manager:
 * zsh
+* git
 * make
 * gcc
 * tree
@@ -44,6 +45,7 @@ This configuration requires the following packages installed via package manager
 
 This configuration requires the following packages installed via package manager:
 * zsh
+* git
 * make
 * gcc
 * tree
@@ -52,6 +54,7 @@ This configuration requires the following packages installed via package manager
 ## GIT Configuration
 
 The setup of these is beyond the scope of this documentation and can be replaced by other mechanisms.
+Not requiered for anonymous clones (not logged into GitHub)
 
 ### MacOS
 
