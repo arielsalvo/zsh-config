@@ -119,6 +119,7 @@ Keep in mind this will not install a Python interpreter (See [the Python section
 | `DEFAULT_PROMPT` | VAR | <nobr>[89-prompt](zshrc.d/89-prompt.zsh)</nobr> | Select the default prompt to install/use | `P10K` | `<EMPTY>`<br/>`P10K`<br/>`STARSHIP`<br/>`DEFAULT` | NO |
 | `PYTHON` | FLAG/VAR | <nobr>[20-apps-05-python](zshrc.d/20-apps-05-python.zsh)</nobr> | Enable installation of `python` via `asdf` and, if available, initialize `conda` | OFF | `<EMPTY>`<br/><nobr>`<distro-name>`<nobr/> | N/A |
 | `TMUX` | FLAG | <nobr>[03-tmux.zsh](zshrc.d/03-tmux.zsh)<nobr/> | Installs custom Oh-My-TMUX config | OFF | `<EMPTY>` | N/A |
+| `HOOK_LOCAL` | FLAG | <nobr>[09-local-pre.zsh](zshrc.d/09-local-pre.zsh)<nobr/><br/><nobr>[99-local-post.zsh](zshrc.d/99-local-post.zsh)<nobr/> | Enables the execution of `.zshrc.local.{pre,post}` if they exist in the home directory | OFF | `<EMPTY>` | N/A |
 
 ## Python
 
