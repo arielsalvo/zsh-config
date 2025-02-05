@@ -1,0 +1,20 @@
+---
+services:
+  zshtest:
+    build:
+      context: .
+      args:
+        - USERNAME=zshtester
+        - USERPASS=Pass1234
+        - LOCALE_INPUT=en_US
+        - LOCALE_CHARMAP=UTF-8
+        - TZ=America/Argentina/Buenos_Aires
+    working_dir: /home/zshtester
+    volumes:
+      - ../.zshenv:/home/zshtester/.config/zsh/.zshenv:ro
+      - ../.zshrc:/home/zshtester/.config/zsh/.zshrc:ro
+      - ../aliases.d:/home/zshtester/.config/zsh/aliases.d:ro
+      - ../files.d:/home/zshtester/.config/zsh/files.d:ro
+      - ../functions.d:/home/zshtester/.config/zsh/functions.d:ro
+      - ../zshrc.d:/home/zshtester/.config/zsh/zshrc.d:ro
+

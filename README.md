@@ -51,6 +51,10 @@ This configuration requires the following packages installed via package manager
 * tree
 * [Git.Git](https://winget.run/pkg/Git/Git) (in the Windows host)
 
+## Playground
+
+This repository can be cloned to a separate directory and the configuration tested in a docker container by using the docker-compose stack in the `_tests` directory.
+
 ## GIT Configuration
 
 The setup of these is beyond the scope of this documentation and can be replaced by other mechanisms.
