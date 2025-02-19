@@ -24,6 +24,9 @@ fi
 # (https://github.com/zdharma-continuum/zinit-annex-meta-plugins)
 zinit light zdharma-continuum/zinit-annex-meta-plugins
 
+# Allows running programs and scripts without modifying $PATH by use of links in $ZPFX/bin
+zinit light zdharma-continuum/zinit-annex-binary-symlink
+
 # zdharma-continuum/zinit annexes (meta-plugin)
 # (https://github.com/zdharma-continuum/zinit-annex-meta-plugins#the-list-of-the-meta-plugins)
 zinit light @annexes
