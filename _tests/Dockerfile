@@ -8,10 +8,10 @@ ARG LOCALE_CHARMAP=UTF-8
 
 ARG TZ=America/Argentina/Buenos_Aires
 
-RUN apt update \
-  && DEBIAN_FRONTEND="noninteractive" apt upgrade -y \
+RUN apt-get update \
+  && DEBIAN_FRONTEND="noninteractive" apt-get upgrade -y \
   && ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
-  && DEBIAN_FRONTEND="noninteractive" apt install -y \
+  && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     autoconf \
     automake \
     bsdextrautils \
