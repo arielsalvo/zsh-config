@@ -49,7 +49,7 @@ zinit \
 
 zinit \
   pack"bgn-binary+keys" \
-    for junegunn/fzf
+    for @junegunn/fzf
 
 zinit \
   has'fzf' \
