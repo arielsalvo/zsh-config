@@ -29,7 +29,7 @@ setopt hist_expire_dups_first
 setopt share_history
 
 # Keep more lines of history
-export HISTSIZE=50000
+export HISTSIZE=60000
 export SAVEHIST=50000
 
 # Redirect terminal history
