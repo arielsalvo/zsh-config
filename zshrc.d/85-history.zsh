@@ -32,11 +32,22 @@ setopt share_history
 export HISTSIZE=60000
 export SAVEHIST=50000
 
-# Redirect terminal history
-mkdir -p ${ZDOTDIR}/.history
-if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-  # Move history to a new file while in the VSCode console
-  export HISTFILE=${ZDOTDIR}/.history/.vscode_history
+if [[ "${ZSHCONF_FEATURES[HISTORY_MANAGER]:u}" == ATUIN ]]; then
+  zinit \
+    as"command" \
+    from"gh-r" \
+    bpick"atuin-*.tar.gz" \
+    mv"atuin*/atuin -> atuin" \
+    atclone"./atuin init zsh > init.zsh; ./atuin gen-completions --shell zsh > _atuin" \
+    atpull"%atclone" src"init.zsh" \
+      for atuinsh/atuin
 else
-  export HISTFILE=${ZDOTDIR}/.history/.zsh_history
+  # Redirect terminal history
+  mkdir -p ${ZDOTDIR}/.history
+  if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+    # Move history to a new file while in the VSCode console
+    export HISTFILE=${ZDOTDIR}/.history/.vscode_history
+  else
+    export HISTFILE=${ZDOTDIR}/.history/.zsh_history
+  fi
 fi
