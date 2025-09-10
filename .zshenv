@@ -65,6 +65,15 @@ else
   mkdir -p ${ZDOTDIR}
 fi
 
+# Load terminal emulator integrations
+mkdir -p ${ZDOTDIR}/integrations.d
+setopt extended_glob
+for _integrationfile in ${ZDOTDIR}/integrations.d/*.zsh(.N); do
+  [[ ${_integrationfile:t} != '~'* ]] || continue
+  source "${_integrationfile}"
+done
+unset _integrationfile
+
 # Setup zprof first if we need to profile
 alias zprofrc="ZPROFRC=1 zsh"
 if [[ ! ${ZPROFRC:-0} -eq 0 ]]; then
